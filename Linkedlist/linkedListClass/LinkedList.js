@@ -87,6 +87,11 @@ export default class LinkedList {
 
     }
 
+    getCount()
+    {
+        return this.count;
+    }
+
     printList()
     {
         let node = this.headNode;
