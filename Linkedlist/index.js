@@ -23,3 +23,9 @@ linkedList.addEnd(node3);
 linkedList.enumerate((value) => {
     console.log("!!!: " + value)
 });
+
+linkedList.remove(25);
+
+linkedList.enumerate((value) => {
+    console.log("!!!: " + value)
+});

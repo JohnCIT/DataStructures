@@ -92,6 +92,49 @@ export default class LinkedList {
         return this.count;
     }
 
+    // TODO check this
+    remove(value)
+    {
+        let previous = null;
+        let current = this.headNode;
+
+        while(current != null)
+        {
+            if(current.getValue() === value)
+            {
+                // Handles if value found in middle of list
+                if(previous != null)
+                {
+                    previous.setNext(current.getNext());
+
+                    // Should handle at the end
+                    if(current.getNext() === null || current.getNext() === undefined)
+                    {
+                        this.tailNode = previous;
+                    }
+
+                    this.count--;
+                }
+                else
+                {
+                    this.removeFront();
+                }
+            }
+
+            previous = current;
+            current = current.getNext();
+        }
+
+        return false;
+    }
+
+    clear()
+    {
+        this.count = 0;
+        this.headNode = null;
+        this.tailNode = null;
+    }
+
     printList()
     {
         let node = this.headNode;
