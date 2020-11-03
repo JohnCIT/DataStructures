@@ -21,14 +21,33 @@ export default class LinkedList {
         // Store current head node
         let tempHeadNode = this.headNode;
 
+        this.headNode = node;
+
         // Get set this node as the current head node and point to the old head
         this.headNode.next = tempHeadNode;
+
 
         this.count++;
 
         if(this.count === 1)
         {
             this.tailNode = this.headNode;
+        }
+    }
+
+    getFirst()
+    {
+        if(this.count != 0)
+        {
+            let value = this.headNode.getValue();
+
+            this.headNode = this.headNode.getNext();
+            this.count--;
+            return value;
+        }
+        else
+        {
+            return  null;
         }
     }
 

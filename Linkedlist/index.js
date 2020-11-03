@@ -1,31 +1,56 @@
 import Node from './linkedListClass/Node.js'
 import LinkedList from "./linkedListClass/LinkedList.js";
+import Stack from "./linkedListClass/Stack.js";
+
+stackCode();
 
 
-let node1 = new Node(5);
-let node2 = new Node(8);
-let node3 = new Node(25);
+function stackCode()
+{
+    let stack = new Stack();
+    stack.push(10);
+    stack.push(20);
+    stack.push(30);
+
+    let one = stack.pop();
+    let two = stack.pop();
+    let three = stack.pop();
+
+    console.log("!!!!!!! " + one + " ! " + two + " ! " + three);
+}
 
 
 
-let linkedList = new LinkedList();
-linkedList.addEnd(node1);
-linkedList.addEnd(node2);
-linkedList.addEnd(node3);
-
-linkedList.printList();
 
 
-linkedList.removeEnd();
-linkedList.printList();
+function linkedList()
+{
+    let node1 = new Node(5);
+    let node2 = new Node(8);
+    let node3 = new Node(25);
 
-linkedList.addEnd(node3);
-linkedList.enumerate((value) => {
-    console.log("!!!: " + value)
-});
 
-linkedList.remove(25);
 
-linkedList.enumerate((value) => {
-    console.log("!!!: " + value)
-});
+    let linkedList = new LinkedList();
+    linkedList.addEnd(node1);
+    linkedList.addEnd(node2);
+    linkedList.addEnd(node3);
+
+    linkedList.printList();
+
+
+    linkedList.removeEnd();
+    linkedList.printList();
+
+    linkedList.addEnd(node3);
+    linkedList.enumerate((value) => {
+        console.log("!!!: " + value)
+    });
+
+    linkedList.remove(25);
+
+    linkedList.enumerate((value) => {
+        console.log("!!!: " + value)
+    });
+}
+
