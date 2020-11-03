@@ -1,8 +1,15 @@
 import Node from './linkedListClass/Node.js'
 import LinkedList from "./linkedListClass/LinkedList.js";
 import Stack from "./linkedListClass/Stack.js";
+import PostFixCalc from "./linkedListClass/postFixCalc.js";
 
-stackCode();
+postFixCalc();
+
+
+function postFixCalc() {
+    let postFixCalc = new PostFixCalc();
+    postFixCalc.calculate([5,6,7, "*", "+", 1, "-"])
+}
 
 
 function stackCode()
